@@ -1,23 +1,11 @@
-This is Java client library for Google Identity Toolkit services.
+This is a sample web site using Google Identity Toolkit Java client library.
 
-Sample usage
-=====================
-/*
- * initialize Gitkit client instance
- */
-GitkitClient gitkitClient = GitkitClient.newBuilder()
-      .setGoogleClientId("your-oauth2-web-client-id-at-Google")
-      .setServiceAccountEmail("your-service-account-email-at-Google-developer-console")
-      .setKeyStream(new FileInputStream("path-to-your-service-account-private-file"))
-      .setWidgetUrl("/gitkit.jsp")
-      .setCookieName("gtoken")
-      .build();
+See https://developers.google.com/identity-toolkit/quickstart/java for instructions to configure Google Identity Toolkit.
 
-// Verifies a GitkitToken
-GitkitUser gitkitUser = gitkitClient.validateTokenInRequest(request);
-
-// Download all accounts from Google Identity Toolkit
-Iterator<GitkitUser> userIterator = gitkitClient.getAllUsers();
-while (userIterator.hasNext()) {
-  // individual user info is returned in userIterator.next()
-}
+Then use the commands
+-----------
+mvn clean
+mvn compile
+mvn exec:exec
+-----------
+to start the local web server at localhost:4567.

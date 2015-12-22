@@ -16,7 +16,8 @@ function load() {
   // The HTTP POST body should be escaped by the server to prevent XSS
   window.google.identitytoolkit.start(
       '#gitkitWidgetDiv', // accepts any CSS selector
-      config);
+      config,
+  		'JAVASCRIPT_ESCAPED_POST_BODY');
 }
 </script>
 <script type="text/javascript" src="//apis.google.com/js/client.js?onload=load"></script>
